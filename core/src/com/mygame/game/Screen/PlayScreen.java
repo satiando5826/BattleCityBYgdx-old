@@ -35,6 +35,11 @@ public class PlayScreen implements Screen {
         gamePort = new FitViewport(BattleCITYbygdx.V_WIDTH,BattleCITYbygdx.V_HEIGHT,gamecamera);   //////type of view may be fix it later (3)
         hud = new HUD(game.batch);
 
+        maploader = new TmxMapLoader();
+        map = maploader.load("Stage-1.tmx");
+        renderer = new OrthogonalTiledMapRenderer(map);
+        gamecamera.position.set(gamePort.getScreenWidth()/2,gamePort.getScreenHeight()/2,0);  //camera follow character
+
 
     }
 
@@ -43,10 +48,27 @@ public class PlayScreen implements Screen {
 
     }
 
+    public void handleInput(float dt){
+        if(Gdx.input.isTouched())
+            gamecamera.position.x += 100 * dt;
+
+    }
+
+    public void update(float dt){
+        handleInput(dt);
+
+        gamecamera.update();
+        renderer.setView(gamecamera);
+    }
+
     @Override
     public void render(float delta){
+        update(delta);
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        renderer.render();
 
         game.batch.setProjectionMatrix(hud.Stage.getCamera().combined);
         hud.Stage.draw();
