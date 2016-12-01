@@ -5,6 +5,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygame.game.BattleCITYbygdx;
@@ -16,10 +19,13 @@ import com.mygame.game.Scenes.HUD;
 public class PlayScreen implements Screen {
 
     private BattleCITYbygdx game;
-   // Texture texture;
     private OrthographicCamera gamecamera;
     private Viewport gamePort;
     private HUD hud;
+
+    private TmxMapLoader maploader;
+    private TiledMap map;
+    private OrthogonalTiledMapRenderer renderer;
 
 
     public PlayScreen(BattleCITYbygdx game){
@@ -28,6 +34,8 @@ public class PlayScreen implements Screen {
         gamecamera = new OrthographicCamera();
         gamePort = new FitViewport(BattleCITYbygdx.V_WIDTH,BattleCITYbygdx.V_HEIGHT,gamecamera);   //////type of view may be fix it later (3)
         hud = new HUD(game.batch);
+
+
     }
 
     @Override
