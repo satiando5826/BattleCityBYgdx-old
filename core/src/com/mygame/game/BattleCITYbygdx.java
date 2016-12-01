@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygame.game.Screen.PlayScreen;
 
 public class BattleCITYbygdx extends Game {
+	public static  final  int V_WIDTH = 800;
+	public static  final  int V_HEIGHT = 600;
+
 	public SpriteBatch batch;
 	
 	@Override
