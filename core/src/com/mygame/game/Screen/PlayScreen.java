@@ -36,7 +36,7 @@ public class PlayScreen implements Screen {
         hud = new HUD(game.batch);
 
         maploader = new TmxMapLoader();
-        map = maploader.load("Stage-1.tmx");
+        map = maploader.load("test.tmx");
         renderer = new OrthogonalTiledMapRenderer(map);
         gamecamera.position.set(gamePort.getScreenWidth()/2,gamePort.getScreenHeight()/2,0);  //camera follow character
 
