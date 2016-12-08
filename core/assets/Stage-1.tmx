@@ -5,7 +5,7 @@
  </tileset>
  <layer name="BG" width="21" height="21">
   <data encoding="base64" compression="zlib">
-   eJyLZ2BgiB/Fo3gUj+JRPIqHIQYARKujqA==
+   eJxzYWBgcIHieCpjlyFu9qibh7abqW0vMeaS615ahA8+c6kZti6jeBQPYgwAIfSOPw==
   </data>
  </layer>
  <layer name="Metal wall" width="21" height="21">
