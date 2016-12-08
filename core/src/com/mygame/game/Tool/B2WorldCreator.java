@@ -101,6 +101,6 @@ public class B2WorldCreator {
             shape.setAsBox(rect.getWidth()/2/BattleCITYbygdx.PPM,rect.getHeight()/2/BattleCITYbygdx.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
-        }   */
+        } */
     }
 }

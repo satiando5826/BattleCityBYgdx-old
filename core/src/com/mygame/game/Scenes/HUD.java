@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Disableable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygame.game.BattleCITYbygdx;
@@ -14,7 +15,7 @@ import javafx.stage.Stage;
 /**
  * Created by Aspire on 1/12/2559.
  */
-public class HUD {
+public class HUD implements Disableable{
     public com.badlogic.gdx.scenes.scene2d.Stage Stage;
     private Viewport viewport;
 
@@ -57,5 +58,16 @@ public class HUD {
         table.add(countdowLabel).expandX();
 
         Stage.addActor(table);
+    }
+
+    @Override
+    public void setDisabled(boolean isDisabled) {
+        Stage.dispose();
+    }
+
+    @Override
+    public boolean isDisabled() {
+        Stage.dispose();
+        return false;
     }
 }

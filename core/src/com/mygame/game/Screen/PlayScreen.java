@@ -71,13 +71,13 @@ public class PlayScreen implements Screen {
     }
 
     public void handleInput(float dt){
-        if(Gdx.input.isKeyPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y<=2)
+        if(Gdx.input.isKeyPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y<=1)
             player.b2body.applyLinearImpulse(new Vector2(0,0.01f), player.b2body.getWorldCenter(), true);
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=2)
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=1)
             player.b2body.applyLinearImpulse(new Vector2(0.01f,0), player.b2body.getWorldCenter(), true);
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >=-2)
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >=-1)
             player.b2body.applyLinearImpulse(new Vector2(-0.01f,0), player.b2body.getWorldCenter(), true);
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.b2body.getLinearVelocity().y >=-2)
+        if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.b2body.getLinearVelocity().y >=-1)
             player.b2body.applyLinearImpulse(new Vector2(0,-0.01f), player.b2body.getWorldCenter(), true);
     }
 
@@ -131,6 +131,10 @@ public class PlayScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        map.dispose();
+        renderer.dispose();
+        world.dispose();
+        b2dr.dispose();
+        hud.setDisabled(true);
     }
 }
