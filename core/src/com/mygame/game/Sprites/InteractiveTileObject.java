@@ -14,6 +14,7 @@ public class InteractiveTileObject {
     private TiledMap map;
     private TiledMapTile tile;
     private Rectangle bounds;
+
     private Body body;
 
     public  InteractiveTileObject(World world, TiledMap map, Rectangle bounds){
