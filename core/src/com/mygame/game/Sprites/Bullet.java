@@ -9,7 +9,6 @@ import com.mygame.game.BattleCITYbygdx;
 public class Bullet {           //Don't khow  this correct
     public World world;
     public Body b2body;
-    public static int count = 0;
 
     public Bullet(World world, float x, float y){
         this.world = world;
@@ -17,15 +16,14 @@ public class Bullet {           //Don't khow  this correct
     }
 
     public void defineBullet(float x, float y){   //position x,y of tank direction enum     troble is how to get tank position
-        count++;
         BodyDef bdef = new BodyDef();
-        bdef.position.set(x / BattleCITYbygdx.PPM,y/ BattleCITYbygdx.PPM);
+        bdef.position.set((x) / BattleCITYbygdx.PPM,(y)/ BattleCITYbygdx.PPM);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(5/BattleCITYbygdx.PPM);
+        shape.setRadius(2/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

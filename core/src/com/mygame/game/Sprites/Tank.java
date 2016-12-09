@@ -18,13 +18,13 @@ public class Tank extends Sprite{
 
     public void defineTank(){
         BodyDef bdef = new BodyDef();
-        bdef.position.set(32 / BattleCITYbygdx.PPM,32/ BattleCITYbygdx.PPM);
+        bdef.position.set(50 / BattleCITYbygdx.PPM,40/ BattleCITYbygdx.PPM);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(5/BattleCITYbygdx.PPM);
+        shape.setRadius(7/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

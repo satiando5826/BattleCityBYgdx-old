@@ -44,7 +44,9 @@ public class PlayScreen implements Screen {
     private Bullet b2;
     private Bullet b3;
 
-    private float direction;  //from last direction input or may be used from vector of tank
+    private float directionx = 0;  //from last direction input or may be used from vector of tank
+    private float directiony = 0;
+
 
     public PlayScreen(BattleCITYbygdx game){
         this.game = game;
@@ -79,27 +81,50 @@ public class PlayScreen implements Screen {
     public void handleInput(float dt){
         if(Gdx.input.isKeyPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y<=1){
             player.b2body.applyLinearImpulse(new Vector2(0,0.01f), player.b2body.getWorldCenter(), true);
-            direction = 1;
+            if(directiony >= 4){
+            }else {
+                directiony += 2;
+            }
+            if(directionx !=0 ){
+                directionx = 0;
+            }
+
         }
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=1){
             player.b2body.applyLinearImpulse(new Vector2(0.01f,0), player.b2body.getWorldCenter(), true);
-            direction = 4;
+            if(directionx >= 4){
+            }else {
+                directionx += 2;
+            }
+            if(directiony !=0 ){
+                directiony = 0;
+            }
         }
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >=-1){
             player.b2body.applyLinearImpulse(new Vector2(-0.01f,0), player.b2body.getWorldCenter(), true);
-            direction = 3;
+            if(directionx <= -4){
+            }else {
+                directionx += -2;
+            }
+            if(directiony !=0 ){
+                directiony = 0;
+            }
         }
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.b2body.getLinearVelocity().y >=-1){
             player.b2body.applyLinearImpulse(new Vector2(0,-0.01f), player.b2body.getWorldCenter(), true);
-            direction = 2;
-        }
-        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)){  //shot bullet
-            if(b1.count <= 3){              //max 3 bullet ok?
-
-            }else{
-                b3 = new Bullet(world,player.getOriginX(),player.getOriginY());
-                b3.b2body.applyLinearImpulse(new Vector2(0,direction), b3.b2body.getWorldCenter(), true);
+            if(directiony <= -4){
+            }else {
+                directiony += -2;
             }
+            if(directionx !=0 ){
+                directionx = 0;
+            }
+        }
+        if(Gdx.input.isKeyJustPressed(Input.Keys.S)){  //shot bullet
+
+                b3 = new Bullet(world,player.getX(),player.getY());
+                b3.b2body.applyLinearImpulse(new Vector2(directionx,directiony), b3.b2body.getWorldCenter(), true);
+
         }
     }
 
