@@ -1,24 +1,25 @@
 package com.mygame.game.Sprites;
 
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.game.BattleCITYbygdx;
 
 /**
- * Created by Aspire on 8/12/2559.
+ * Created by Aspire on 9/12/2559.
  */
-public class Tank extends Sprite{
+public class Bullet {           //Don't khow  this correct
     public World world;
     public Body b2body;
+    public static int count = 0;
 
-    public Tank(World world){
+    public Bullet(World world, float x, float y){
         this.world = world;
-        defineTank();
+        defineBullet(x,y);
     }
 
-    public void defineTank(){
+    public void defineBullet(float x, float y){   //position x,y of tank direction enum     troble is how to get tank position
+        count++;
         BodyDef bdef = new BodyDef();
-        bdef.position.set(32 / BattleCITYbygdx.PPM,32/ BattleCITYbygdx.PPM);
+        bdef.position.set(x / BattleCITYbygdx.PPM,y/ BattleCITYbygdx.PPM);
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 
@@ -28,5 +29,6 @@ public class Tank extends Sprite{
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
+
     }
 }
