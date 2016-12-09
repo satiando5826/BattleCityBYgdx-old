@@ -10,14 +10,16 @@ public class Bullet {           //Don't khow  this correct
     public World world;
     public Body b2body;
 
-    public Bullet(World world, float x, float y){
+    public Bullet(World world, Tank tank, float direction){
         this.world = world;
-        defineBullet(x,y);
+        defineBullet(tank,direction);
     }
 
-    public void defineBullet(float x, float y){   //position x,y of tank direction enum     troble is how to get tank position
+    public void defineBullet(Tank tank,float direction){   //position x,y of tank direction enum     troble is how to get tank position
         BodyDef bdef = new BodyDef();
-        bdef.position.set((x) / BattleCITYbygdx.PPM,(y)/ BattleCITYbygdx.PPM);
+        if(direction < 0){
+            bdef.position.set(tank.b2body.getPosition().add(-0.05f,0));
+        }else   bdef.position.set(tank.b2body.getPosition());
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 

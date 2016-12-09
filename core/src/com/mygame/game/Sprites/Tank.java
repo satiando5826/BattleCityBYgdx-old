@@ -26,7 +26,7 @@ public class Tank extends Sprite{
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(7/BattleCITYbygdx.PPM);
+        shape.setRadius(5/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

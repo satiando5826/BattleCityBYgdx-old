@@ -122,8 +122,8 @@ public class PlayScreen implements Screen {
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.S)){  //shot bullet
 
-                b3 = new Bullet(world,player.getX(),player.getY());
-                b3.b2body.applyLinearImpulse(new Vector2(directionx,directiony), b3.b2body.getWorldCenter(), true);
+                b3 = new Bullet(world,player,directionx);
+                b3.b2body.applyLinearImpulse(new Vector2(directionx,directiony).add(player.b2body.getLinearVelocity().setLength(0.5f)), player.b2body.getWorldCenter(), true);
 
         }
     }
