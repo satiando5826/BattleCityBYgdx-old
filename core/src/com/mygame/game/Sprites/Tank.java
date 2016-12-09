@@ -4,6 +4,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.game.BattleCITYbygdx;
 
+import java.awt.*;
+
 /**
  * Created by Aspire on 8/12/2559.
  */
@@ -28,5 +30,14 @@ public class Tank extends Sprite{
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
+    }
+
+    //test file tank
+    private static Toolkit tk = Toolkit.getDefaultToolkit();
+    private static Image[] tankImags = null;
+    static {
+        tankImags = new Image[] {
+                tk.getImage("PngFile/TankTestWhite.png")
+        };
     }
 }
