@@ -6,6 +6,8 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.game.BattleCITYbygdx;
+import com.mygame.game.Sprites.Brick;
+import com.mygame.game.Sprites.metal;
 
 /**
  * Created by Aspire on 8/12/2559.
@@ -22,14 +24,7 @@ public class B2WorldCreator {
         for(MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-            bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth()/2)/ BattleCITYbygdx.PPM, (rect.getY() + rect.getHeight()/2)/BattleCITYbygdx.PPM);
-
-            body = world.createBody(bdef);
-
-            shape.setAsBox((rect.getWidth()/2)/BattleCITYbygdx.PPM,(rect.getHeight()/2)/BattleCITYbygdx.PPM);
-            fdef.shape = shape;
-            body.createFixture(fdef);
+           new metal(world,map,rect);
         }
 
 
@@ -79,14 +74,7 @@ public class B2WorldCreator {
         for(MapObject object : map.getLayers().get(10).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-            bdef.type = BodyDef.BodyType.StaticBody;
-            bdef.position.set((rect.getX() + rect.getWidth()/2)/ BattleCITYbygdx.PPM, (rect.getY() + rect.getHeight()/2)/BattleCITYbygdx.PPM);
-
-            body = world.createBody(bdef);
-
-            shape.setAsBox((rect.getWidth()/2)/BattleCITYbygdx.PPM,(rect.getHeight()/2)/BattleCITYbygdx.PPM);
-            fdef.shape = shape;
-            body.createFixture(fdef);
+            new Brick(world,map,rect);
         }
 
   /*   //   Stage frame

@@ -56,7 +56,7 @@ public class PlayScreen implements Screen {
         hud = new HUD(game.batch);
 
         maploader = new TmxMapLoader();
-        map = maploader.load("Stage-1.tmx");
+        map = maploader.load("Stage-2.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1/ BattleCITYbygdx.PPM);
 
 
