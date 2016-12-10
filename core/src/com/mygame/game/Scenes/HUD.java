@@ -13,7 +13,7 @@ import com.mygame.game.BattleCITYbygdx;
 import javafx.stage.Stage;
 
 /**
- * Created by Aspire on 1/12/2559.
+ * Created by Sathianporn khamdee on 1/12/2559.
  */
 public class HUD implements Disableable{
     public com.badlogic.gdx.scenes.scene2d.Stage Stage;
