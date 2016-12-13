@@ -19,6 +19,7 @@ public class metal extends InteractiveTileObject{
     public metal(World world, TiledMap map, Rectangle bounds){
         super(world,map,bounds);
         fixture.setUserData(this);
+        setCategoryFilter(BattleCITYbygdx.metal_BIT);
     }
 
     @Override

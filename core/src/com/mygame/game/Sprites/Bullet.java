@@ -26,6 +26,9 @@ public class Bullet {           //Don't khow  this correct
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(1.3f/BattleCITYbygdx.PPM);
+        fdef.filter.categoryBits = BattleCITYbygdx.bullet_BIT;
+        fdef.filter.maskBits = BattleCITYbygdx.DEFAULT_BIT | BattleCITYbygdx.brick_BIT | BattleCITYbygdx.metal_BIT;
+
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

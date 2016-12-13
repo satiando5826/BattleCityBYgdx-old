@@ -37,6 +37,11 @@ public abstract class InteractiveTileObject {
         fixture = body.createFixture(fdef);
     }
     public abstract void onBullethit();
+    public void setCategoryFilter(short filterBit){
+        Filter filter = new Filter();
+        filter.categoryBits = filterBit;
+        fixture.setFilterData(filter);
+    }
 
 
 }
