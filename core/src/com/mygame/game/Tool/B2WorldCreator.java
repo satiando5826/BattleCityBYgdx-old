@@ -21,7 +21,7 @@ public class B2WorldCreator {
         Body body;
 
         //Metal wall
-        for(MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)){
+        for(MapObject object : map.getLayers().get(8).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
            new metal(world,map,rect);
@@ -29,7 +29,7 @@ public class B2WorldCreator {
 
 
         //forest
-        for(MapObject object : map.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)){
+        for(MapObject object : map.getLayers().get(6).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
             bdef.type = BodyDef.BodyType.StaticBody;
@@ -43,7 +43,7 @@ public class B2WorldCreator {
         }
 
         //water
-        for(MapObject object : map.getLayers().get(8).getObjects().getByType(RectangleMapObject.class)){
+        for(MapObject object : map.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
             bdef.type = BodyDef.BodyType.StaticBody;
@@ -57,7 +57,7 @@ public class B2WorldCreator {
         }
 
         //Base
-        for(MapObject object : map.getLayers().get(9).getObjects().getByType(RectangleMapObject.class)){
+        for(MapObject object : map.getLayers().get(10).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
             bdef.type = BodyDef.BodyType.StaticBody;
@@ -71,13 +71,13 @@ public class B2WorldCreator {
         }
 
         //Brick
-        for(MapObject object : map.getLayers().get(10).getObjects().getByType(RectangleMapObject.class)){
+        for(MapObject object : map.getLayers().get(9).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
             new Brick(world,map,rect);
         }
 
-  /*   //   Stage frame
+     //   Stage frame
         for(MapObject object : map.getLayers().get(11).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
@@ -89,6 +89,6 @@ public class B2WorldCreator {
             shape.setAsBox(rect.getWidth()/2/BattleCITYbygdx.PPM,rect.getHeight()/2/BattleCITYbygdx.PPM);
             fdef.shape = shape;
             body.createFixture(fdef);
-        } */
+        }
     }
 }

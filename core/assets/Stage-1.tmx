@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="21" height="21" tilewidth="16" tileheight="16" nextobjectid="223">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="21" height="21" tilewidth="16" tileheight="16" nextobjectid="228">
  <tileset firstgid="1" name="NES - Battle City - General Sprites" tilewidth="16" tileheight="16" tilecount="400" columns="25">
   <image source="NES - Battle City - General Sprites.png" width="400" height="256"/>
  </tileset>
@@ -8,9 +8,9 @@
    eJyLZ2BgiB/Fo3gUj+JRPIqHIQYARKujqA==
   </data>
  </layer>
- <layer name="Metal wall" width="21" height="21">
+ <layer name="Forest" width="21" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBg6QIsAn1gxbGqIkSPXjMHqTnqYOQqoA4hNG6SkoVGAHQzXMKOWv4Za+AAANMMDxw==
+   eJxjYBgFo2DkAhcsmBJ1o2AUjILBBQASugKp
   </data>
  </layer>
  <layer name="Water" width="21" height="21">
@@ -18,14 +18,9 @@
    eJxjYBgFo2AUDAXgjISpoW6oAGcsmBJ1DFjk8JlJjLpRMHgBAG/QBT0=
   </data>
  </layer>
- <layer name="Forest" width="21" height="21">
+ <layer name="Metal" width="21" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DkAhcsmBJ1o2AUjILBBQASugKp
-  </data>
- </layer>
- <layer name="Base" width="21" height="21">
-  <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMAqGDnAjQS0AEuwARw==
+   eJxjYBg6QIsAn1gxbGqIkSPXjMHqTnqYOQqoA4hNG6SkoVGAHQzXMKOWv4Za+AAANMMDxw==
   </data>
  </layer>
  <layer name="Brick" width="21" height="21">
@@ -33,7 +28,26 @@
    eJxjYKA9EETC1FAHU4tMU6pu1EzqmClIRYxuJ6WAXmbi8wua3gR0TGd3YrV/sLkTj1q87ibXTGSaWmZS253EAmqZQ675gyGOAAitEUc=
   </data>
  </layer>
- <objectgroup name="Metal Wall O">
+ <layer name="Base" width="21" height="21">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAqGDnAjQS0AEuwARw==
+  </data>
+ </layer>
+ <objectgroup name="Forest O">
+  <object id="216" x="48" y="144" width="80" height="16"/>
+  <object id="217" x="208" y="144" width="80" height="16"/>
+ </objectgroup>
+ <objectgroup name="Water O">
+  <object id="206" x="64" y="176" width="48" height="16"/>
+  <object id="207" x="224" y="176" width="48" height="16"/>
+  <object id="208" x="48" y="224" width="80" height="16"/>
+  <object id="210" x="48" y="240" width="16" height="16"/>
+  <object id="211" x="112" y="240" width="16" height="16"/>
+  <object id="212" x="208" y="224" width="80" height="16"/>
+  <object id="214" x="208" y="240" width="16" height="16"/>
+  <object id="215" x="272" y="240" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup name="Metal O">
   <object id="178" x="160" y="32" width="16" height="16"/>
   <object id="179" x="160" y="64" width="16" height="16"/>
   <object id="180" x="304" y="32" width="16" height="16"/>
@@ -58,22 +72,7 @@
   <object id="202" x="16" y="288" width="16" height="16"/>
   <object id="205" x="160" y="240" width="16" height="16"/>
  </objectgroup>
- <objectgroup name="Forest O">
-  <object id="216" x="48" y="144" width="80" height="16"/>
-  <object id="217" x="208" y="144" width="80" height="16"/>
- </objectgroup>
- <objectgroup name="Water Layer O">
-  <object id="206" x="64" y="176" width="48" height="16"/>
-  <object id="207" x="224" y="176" width="48" height="16"/>
-  <object id="208" x="48" y="224" width="80" height="16"/>
-  <object id="210" x="48" y="240" width="16" height="16"/>
-  <object id="211" x="112" y="240" width="16" height="16"/>
-  <object id="212" x="208" y="224" width="80" height="16"/>
-  <object id="214" x="208" y="240" width="16" height="16"/>
-  <object id="215" x="272" y="240" width="16" height="16"/>
- </objectgroup>
- <objectgroup name="Base O"/>
- <objectgroup name="Normal Brick O">
+ <objectgroup name="Brick O">
   <object id="61" x="64" y="16" width="16" height="16"/>
   <object id="62" x="64" y="32" width="16" height="16"/>
   <object id="63" x="64" y="48" width="16" height="16"/>
@@ -177,7 +176,13 @@
   <object id="175" x="256" y="192" width="16" height="16"/>
   <object id="176" x="272" y="192" width="16" height="16"/>
  </objectgroup>
- <objectgroup name="Stage Frame">
-  <object id="220" x="0" y="0" width="336" height="336"/>
+ <objectgroup name="Base O">
+  <object id="227" x="160" y="320" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup name="Stage Frame Fix">
+  <object id="223" x="0" y="0" width="336"/>
+  <object id="224" x="336" y="0" height="336"/>
+  <object id="225" x="0" y="336" width="336"/>
+  <object id="226" x="0" y="0" height="336"/>
  </objectgroup>
 </map>

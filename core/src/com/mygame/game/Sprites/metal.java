@@ -18,6 +18,7 @@ import com.mygame.game.BattleCITYbygdx;
 public class metal extends InteractiveTileObject{
     public metal(World world, TiledMap map, Rectangle bounds){
         super(world,map,bounds);
+        fixture.setUserData(this);
     }
 
     @Override
