@@ -17,15 +17,15 @@ public class Bullet {           //Don't khow  this correct
 
     public void defineBullet(Tank tank,float direction){   //position x,y of tank direction enum     troble is how to get tank position
         BodyDef bdef = new BodyDef();
-        if(direction < 0){
-            bdef.position.set(tank.b2body.getPosition().add(-0.05f,0));
-        }else   bdef.position.set(tank.b2body.getPosition());
+        if(tank.b2body.getLinearVelocity().x >0){
+            bdef.position.set(tank.b2body.getPosition().add(2f/BattleCITYbygdx.PPM,0));
+        }else   bdef.position.set(tank.b2body.getPosition().add(-2f/BattleCITYbygdx.PPM,0));
         bdef.type = BodyDef.BodyType.DynamicBody;
         b2body = world.createBody(bdef);
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(2/BattleCITYbygdx.PPM);
+        shape.setRadius(1.5f/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

@@ -89,8 +89,8 @@ public class Tank extends Sprite{
     public State getState(){
         if(Math.abs(b2body.getLinearVelocity().x) > Math.abs(b2body.getLinearVelocity().y)) {
             if(b2body.getLinearVelocity().x > 0)
-                return State.left;
-            else return State.right;
+                return State.right;
+            else return State.left;
         }else {
             if(b2body.getLinearVelocity().y > 0)
                 return State.up;
@@ -107,7 +107,7 @@ public class Tank extends Sprite{
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(4/BattleCITYbygdx.PPM);
+        shape.setRadius(3/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
