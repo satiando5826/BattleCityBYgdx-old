@@ -90,9 +90,9 @@ public class PlayScreen implements Screen {
     public void handleInput(float dt){
         if(Gdx.input.isKeyPressed(Input.Keys.UP) && player.b2body.getLinearVelocity().y<=1){
             player.b2body.applyLinearImpulse(new Vector2(0,0.01f), player.b2body.getWorldCenter(), true);
-            if(directiony >= 4){
+            if(directiony >= 3){
             }else {
-                directiony += 2;
+                directiony += 1.5f;
             }
             if(directionx !=0 ){
                 directionx = 0;
@@ -101,9 +101,9 @@ public class PlayScreen implements Screen {
         }
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=1){
             player.b2body.applyLinearImpulse(new Vector2(0.01f,0), player.b2body.getWorldCenter(), true);
-            if(directionx >= 4){
+            if(directionx >= 3){
             }else {
-                directionx += 2;
+                directionx += 1.5f;
             }
             if(directiony !=0 ){
                 directiony = 0;
@@ -111,9 +111,9 @@ public class PlayScreen implements Screen {
         }
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >=-1){
             player.b2body.applyLinearImpulse(new Vector2(-0.01f,0), player.b2body.getWorldCenter(), true);
-            if(directionx <= -4){
+            if(directionx <= -3){
             }else {
-                directionx += -2;
+                directionx += -1.5f;
             }
             if(directiony !=0 ){
                 directiony = 0;
@@ -121,9 +121,9 @@ public class PlayScreen implements Screen {
         }
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && player.b2body.getLinearVelocity().y >=-1){
             player.b2body.applyLinearImpulse(new Vector2(0,-0.01f), player.b2body.getWorldCenter(), true);
-            if(directiony <= -4){
+            if(directiony <= -3){
             }else {
-                directiony += -2;
+                directiony += -1.5f;
             }
             if(directionx !=0 ){
                 directionx = 0;
