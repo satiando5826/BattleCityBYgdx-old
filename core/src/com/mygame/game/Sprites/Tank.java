@@ -1,8 +1,10 @@
 package com.mygame.game.Sprites;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.game.BattleCITYbygdx;
+import com.mygame.game.Screen.PlayScreen;
 
 import java.awt.*;
 
@@ -12,10 +14,18 @@ import java.awt.*;
 public class Tank extends Sprite{
     public World world;
     public Body b2body;
+    private TextureRegion tank;
 
-    public Tank(World world){
+    public Tank(World world, PlayScreen screen){
+        super(screen.getAtlas().findRegion("TY1"));
         this.world = world;
         defineTank();
+        tank = new TextureRegion(getTexture(),0,0,16,16);
+        setBounds(0,0,16/BattleCITYbygdx.PPM,16/BattleCITYbygdx.PPM);
+        setRegion(tank);
+    }
+    public void update(float dt){
+        setPosition(b2body.getPosition().x - getWidth()/2,b2body.getPosition().y - getHeight()/2);
     }
 
     public void defineTank(){
@@ -26,7 +36,7 @@ public class Tank extends Sprite{
 
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
-        shape.setRadius(5/BattleCITYbygdx.PPM);
+        shape.setRadius(4/BattleCITYbygdx.PPM);
 
         fdef.shape = shape;
         b2body.createFixture(fdef);

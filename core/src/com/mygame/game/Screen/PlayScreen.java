@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -28,6 +29,8 @@ import com.mygame.game.Tool.B2WorldCreator;
 public class PlayScreen implements Screen {
 
     private BattleCITYbygdx game;
+    private TextureAtlas atlas;
+
     private OrthographicCamera gamecamera;
     private Viewport gamePort;
     private HUD hud;
@@ -49,6 +52,8 @@ public class PlayScreen implements Screen {
 
 
     public PlayScreen(BattleCITYbygdx game){
+        atlas = new TextureAtlas("Tank.pack");
+
         this.game = game;
         //texture = new Texture("badlogic.jpg");
         gamecamera = new OrthographicCamera();
@@ -60,7 +65,7 @@ public class PlayScreen implements Screen {
         renderer = new OrthogonalTiledMapRenderer(map, 1/ BattleCITYbygdx.PPM);
 
 
-        gamecamera.position.set(gamePort.getScreenWidth()/2,gamePort.getScreenHeight()/2,0);  //camera follow character
+        gamecamera.position.set(gamePort.getScreenWidth()+1.6f,gamePort.getScreenHeight()+1.8f,0);
 
         world = new World(new Vector2(0, 0), true);
         b2dr =  new Box2DDebugRenderer();
@@ -69,7 +74,11 @@ public class PlayScreen implements Screen {
 
         new B2WorldCreator(world, map);
 
-        player = new Tank(world);
+        player = new Tank(world, this);
+    }
+
+    public TextureAtlas getAtlas(){
+        return atlas;
     }
 
 
@@ -133,6 +142,8 @@ public class PlayScreen implements Screen {
 
         world.step(1/60f, 6,2);
 
+        player.update(dt);
+
         gamecamera.update();
         renderer.setView(gamecamera);
     }
@@ -148,6 +159,11 @@ public class PlayScreen implements Screen {
 
         //box2ddebug
         b2dr.render(world, gamecamera.combined);
+
+        game.batch.setProjectionMatrix(gamecamera.combined);
+        game.batch.begin();
+        player.draw(game.batch);
+        game.batch.end();
 
         game.batch.setProjectionMatrix(hud.Stage.getCamera().combined);
         hud.Stage.draw();
