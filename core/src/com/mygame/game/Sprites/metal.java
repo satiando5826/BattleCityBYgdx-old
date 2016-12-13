@@ -1,5 +1,6 @@
 package com.mygame.game.Sprites;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -17,6 +18,11 @@ import com.mygame.game.BattleCITYbygdx;
 public class metal extends InteractiveTileObject{
     public metal(World world, TiledMap map, Rectangle bounds){
         super(world,map,bounds);
+    }
+
+    @Override
+    public void onBullethit() {
+        Gdx.app.log("metal","collision");
     }
 
 }

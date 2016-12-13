@@ -22,6 +22,7 @@ import com.mygame.game.Scenes.HUD;
 import com.mygame.game.Sprites.Bullet;
 import com.mygame.game.Sprites.Tank;
 import com.mygame.game.Tool.B2WorldCreator;
+import com.mygame.game.Tool.WorldContacListener;
 
 /**
  * Created by Aspire on 22/11/2559.
@@ -61,7 +62,7 @@ public class PlayScreen implements Screen {
         hud = new HUD(game.batch);
 
         maploader = new TmxMapLoader();
-        map = maploader.load("Stage-2.tmx");
+        map = maploader.load("Stage-1.tmx");
         renderer = new OrthogonalTiledMapRenderer(map, 1/ BattleCITYbygdx.PPM);
 
 
@@ -75,6 +76,8 @@ public class PlayScreen implements Screen {
         new B2WorldCreator(world, map);
 
         player = new Tank(world, this);
+
+        world.setContactListener(new WorldContacListener());
     }
 
     public TextureAtlas getAtlas(){

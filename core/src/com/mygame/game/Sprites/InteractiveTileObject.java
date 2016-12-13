@@ -9,11 +9,12 @@ import com.mygame.game.BattleCITYbygdx;
 /**
  * Created by Aspire on 8/12/2559.
  */
-public class InteractiveTileObject {
+public abstract class InteractiveTileObject {
     protected World world;
     protected TiledMap map;
     protected TiledMapTile tile;
     protected Rectangle bounds;
+    protected Fixture fixture;
 
     private Body body;
 
@@ -33,6 +34,9 @@ public class InteractiveTileObject {
 
         shape.setAsBox((bounds.getWidth()/2)/BattleCITYbygdx.PPM,(bounds.getHeight()/2)/BattleCITYbygdx.PPM);
         fdef.shape = shape;
-        body.createFixture(fdef);
+        fixture = body.createFixture(fdef);
     }
+    public abstract void onBullethit();
+
+
 }

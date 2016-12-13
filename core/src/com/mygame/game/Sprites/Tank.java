@@ -36,22 +36,22 @@ public class Tank extends Sprite{
         Array<TextureRegion> frames = new Array<TextureRegion>();
         frames.add(new TextureRegion(getTexture(),91,38,16,16));
         frames.add(new TextureRegion(getTexture(),91,20,16,16));
-        tankup = new Animation(0.1f,frames);
+        tankup = new Animation(0.3f,frames);
         frames.clear();
 
         frames.add(new TextureRegion(getTexture(),73,2,16,16));
         frames.add(new TextureRegion(getTexture(),91,2,16,16));
-        tankdown = new Animation(0.1f,frames);
+        tankdown = new Animation(0.3f,frames);
         frames.clear();
 
         frames.add(new TextureRegion(getTexture(),109,92,16,16));
         frames.add(new TextureRegion(getTexture(),109,74,16,16));
-        tankleft = new Animation(0.1f,frames);
+        tankleft = new Animation(0.3f,frames);
         frames.clear();
 
         frames.add(new TextureRegion(getTexture(),109,56,16,16));
         frames.add(new TextureRegion(getTexture(),109,38,16,16));
-        tankright = new Animation(0.1f,frames);
+        tankright = new Animation(0.3f,frames);
         frames.clear();
 
         defineTank();
