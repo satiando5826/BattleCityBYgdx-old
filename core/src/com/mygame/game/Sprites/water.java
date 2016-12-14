@@ -12,7 +12,7 @@ public class water extends InteractiveTileObject {
     public water(World world, TiledMap map, Rectangle bounds) {
         super(world, map, bounds);
         fixture.setUserData(this);
-        setCategoryFilter(BattleCITYbygdx.water_BIT);
+        //setCategoryFilter(BattleCITYbygdx.water_BIT);
     }
 
     @Override
