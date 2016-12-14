@@ -180,6 +180,14 @@ public class PlayScreen implements Screen {
         gamePort.update(width,height);
     }
 
+    public TiledMap getMap(){
+        return map;
+    }
+
+    
+
+
+
     @Override
     public void pause() {
 
