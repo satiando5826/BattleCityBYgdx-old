@@ -23,6 +23,7 @@ public class BattleCITYbygdx extends Game {
 	public static final short water_BIT = 4;
 	public static final short base_BIT = 4;
 	public static final short frame_BIT = 4;
+	//
 
 	public SpriteBatch batch;
 	
