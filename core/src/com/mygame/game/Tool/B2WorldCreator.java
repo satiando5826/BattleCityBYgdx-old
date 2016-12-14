@@ -41,7 +41,7 @@ public class B2WorldCreator {
         for(MapObject object : map.getLayers().get(7).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) object).getRectangle();
 
-            new water(world, map, rect);
+            new water(world,map,rect);
         }
 
         //Base

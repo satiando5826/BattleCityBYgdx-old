@@ -17,6 +17,5 @@ public class water extends InteractiveTileObject {
 
     @Override
     public void onBullethit() {
-
     }
 }

@@ -110,7 +110,7 @@ public class Tank extends Sprite{
         shape.setRadius(5.5f/BattleCITYbygdx.PPM);
         fdef.filter.categoryBits = BattleCITYbygdx.tank_BIT;
         fdef.filter.groupIndex = BattleCITYbygdx.water_BIT;
-        fdef.filter.maskBits = BattleCITYbygdx.DEFAULT_BIT |BattleCITYbygdx.brick_BIT | BattleCITYbygdx.metal_BIT;
+        fdef.filter.maskBits = BattleCITYbygdx.DEFAULT_BIT | BattleCITYbygdx.brick_BIT | BattleCITYbygdx.metal_BIT;
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
