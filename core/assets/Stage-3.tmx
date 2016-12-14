@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="21" height="21" tilewidth="16" tileheight="16" nextobjectid="154">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="21" height="21" tilewidth="16" tileheight="16" nextobjectid="163">
  <tileset firstgid="1" name="NES - Battle City - General Sprites" tilewidth="16" tileheight="16" tilecount="400" columns="25">
-  <image source="NES - Battle City - General Sprites.png" width="400" height="256"/>
+  <image source="../../../../OOP Project/DODO/BattleCITYBYGDX/core/assets/NES - Battle City - General Sprites.png" width="400" height="256"/>
  </tileset>
  <layer name="BG" width="21" height="21">
   <data encoding="base64" compression="zlib">
@@ -151,6 +151,15 @@
   <object id="65" x="160" y="304" width="16" height="16"/>
   <object id="66" x="176" y="304" width="16" height="16"/>
   <object id="67" x="176" y="320" width="16" height="16"/>
+  <object id="154" x="120.182" y="80.3636" width="7.63636" height="15.2727"/>
+  <object id="155" x="103.818" y="96.3636" width="8.36364" height="15.2727"/>
+  <object id="156" x="128.182" y="72" width="15.6364" height="7.45455"/>
+  <object id="157" x="144" y="71.8182" width="15.8182" height="7.63636"/>
+  <object id="158" x="160.182" y="71.6364" width="15.8182" height="8"/>
+  <object id="159" x="176" y="71.6364" width="16" height="7.81818"/>
+  <object id="160" x="192" y="72" width="16" height="7.27273"/>
+  <object id="161" x="208.182" y="80" width="8.36364" height="15.6364"/>
+  <object id="162" x="224.182" y="95.8182" width="8" height="16"/>
  </objectgroup>
  <objectgroup name="Base O">
   <object id="148" x="160" y="320" width="16" height="16"/>
