@@ -2,6 +2,7 @@ package com.mygame.game.Sprites;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygame.game.BattleCITYbygdx;
@@ -42,6 +43,9 @@ public abstract class InteractiveTileObject {
         filter.categoryBits = filterBit;
         fixture.setFilterData(filter);
     }
-
+    public TiledMapTileLayer.Cell getCell(){
+        TiledMapTileLayer layer = (TiledMapTileLayer) map.getLayers().get(4);
+        return layer.getCell((int)(body.getPosition().x * BattleCITYbygdx.PPM/16),(int)(body.getPosition().y*BattleCITYbygdx.PPM/16));
+    }
 
 }

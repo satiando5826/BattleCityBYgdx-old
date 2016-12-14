@@ -18,7 +18,7 @@ public class frame extends InteractiveTileObject{
 
     @Override
     public void onBullethit() {
-        Gdx.app.log("metal","collision");
+        Gdx.app.log("frame","collision");
     }
 
 }

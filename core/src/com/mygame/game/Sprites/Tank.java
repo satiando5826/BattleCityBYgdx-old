@@ -26,6 +26,8 @@ public class Tank extends Sprite{
     private Animation tankright;
     private float stateTime;
 
+    protected Fixture fixture;
+
     public Tank(World world, PlayScreen screen){
         super(screen.getAtlas().findRegion("TY1"));
         this.world = world;
@@ -108,14 +110,17 @@ public class Tank extends Sprite{
         FixtureDef fdef = new FixtureDef();
         CircleShape shape = new CircleShape();
         shape.setRadius(5.5f/BattleCITYbygdx.PPM);
+
         fdef.filter.categoryBits = BattleCITYbygdx.tank_BIT;
-       // fdef.filter.maskBits = BattleCITYbygdx.water_BIT | BattleCITYbygdx.DEFAULT_BIT | BattleCITYbygdx.brick_BIT | BattleCITYbygdx.metal_BIT;
+        fdef.filter.maskBits = BattleCITYbygdx.water_BIT | BattleCITYbygdx.DEFAULT_BIT | BattleCITYbygdx.brick_BIT | BattleCITYbygdx.metal_BIT;
         fdef.shape = shape;
         b2body.createFixture(fdef);
 
-
-
-
+    }
+    public void setCategoryFilter(short filterBIT){
+        Filter filter = new Filter();
+        filter.categoryBits = filterBIT;
+        fixture.setFilterData(filter);
     }
 
     //test file tank

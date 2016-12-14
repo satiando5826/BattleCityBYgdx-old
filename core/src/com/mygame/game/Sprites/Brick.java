@@ -2,6 +2,7 @@ package com.mygame.game.Sprites;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.World;
 import com.mygame.game.BattleCITYbygdx;
@@ -20,5 +21,8 @@ public class Brick extends InteractiveTileObject {
     public void onBullethit() {
         Gdx.app.log("Brick","collision");
         setCategoryFilter(BattleCITYbygdx.DESTROYED_BIT);
+        getCell().setTile(null);
     }
+
+
 }

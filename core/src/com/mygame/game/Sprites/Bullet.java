@@ -10,6 +10,8 @@ public class Bullet {           //Don't khow  this correct
     public World world;
     public Body b2body;
 
+    protected Fixture fixture;
+
     public Bullet(World world, Tank tank, float direction){
         this.world = world;
         defineBullet(tank,direction);
@@ -38,5 +40,11 @@ public class Bullet {           //Don't khow  this correct
         fdef.isSensor = true;
 
         b2body.createFixture(fdef).setUserData("Bull");
+        fixture = b2body.createFixture(fdef);
+    }
+    public void setCategoryFilter(short filterBIT){
+        Filter filter = new Filter();
+        filter.categoryBits = filterBIT;
+        fixture.setFilterData(filter);
     }
 }
