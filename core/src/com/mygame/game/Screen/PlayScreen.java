@@ -179,8 +179,12 @@ public class PlayScreen implements Screen {
     public void resize(int width, int height) {
         gamePort.update(width,height);
     }
-    //test
-    //
+
+    public TiledMap getMap(){
+        return map;
+    }
+
+
 
     @Override
     public void pause() {
